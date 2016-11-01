@@ -1,0 +1,39 @@
+---
+title: "Peer Assessment 1 - Reproducible Research"
+author: "R. Ballard"
+date: "October 17, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Coursera - Reproducible Research Project 1
+
+This is the markdown file for the first peer review project for Reproducible Research. Course 5 in the Data Science Specialization. The below code chuck will read in the raw data for the project. This data frame consists of:
+- Three Columns
+ 1.  Year
+ 2.  Steps
+ 3.  Interval
+- 17568 observations
+
+
+```{r dataread}
+setwd("C:/Users/rballard/Desktop/Personal/Data Science Certification/repres/RepData_PeerAssessment1")
+
+activity <- read.csv(file="activity.csv")
+activity$date<-as.Date(activity$date,format="%Y-%m-%d")
+activity$interval<-as.factor(activity$interval)
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
